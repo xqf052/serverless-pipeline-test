@@ -5,10 +5,12 @@ pipeline {
 
     stages {
         stage('serverless deploy') {
-            steps{               
-                    withAWS(credentials: 'xqf052aws1-cred', region:'ap-southeast-2'){
-                    sh 'sls deploy -v'
-                }                
+            steps{
+                dir('./serverless-deploy'){
+                     withAWS(credentials: 'xqf052aws1-cred', region:'ap-southeast-2'){
+                        sh 'sls deploy -v'
+                    }
+                }
             }
         }
 
