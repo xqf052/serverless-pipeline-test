@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('serverless deploy') {
             steps{
-                dir('./serverless-deploy'){
+                dir('/var/jenkins_home/workspace/serverless-pipeline-test/serverless-deploy'){
                      withAWS(credentials: 'xqf052aws1-cred', region:'ap-southeast-2'){
                         sh 'sls deploy -v'
                     }
