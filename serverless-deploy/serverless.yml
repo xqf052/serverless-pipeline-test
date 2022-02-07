@@ -7,6 +7,9 @@ provider:
   runtime: python3.8
   region: ap-southeast-2
   # profile: admin
+   deploymentBucket:
+    name: qifan-deployment-bucket
+    maxPreviousDeploymentArtifacts: 3
 
 
 functions:
